@@ -1,0 +1,1399 @@
+:root {
+
+    --ivory: #f6f2e9;
+    --paper: #eee7d9;
+    --paper-light: #faf7f0;
+
+    --text: #292722;
+    --muted: #777066;
+
+    --bronze: #9a8058;
+    --bronze-light: #b29b78;
+
+    --line: rgba(154, 128, 88, .55);
+
+    --serif: "Cormorant Garamond", serif;
+    --sans: "Montserrat", sans-serif;
+}
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+
+    scroll-behavior: smooth;
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+
+    width: 100%;
+    min-height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background: var(--ivory);
+    color: var(--text);
+
+    font-family: var(--sans);
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==================================================
+   ЛЕПЕСТКИ
+================================================== */
+
+.petals-container {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+.petal {
+
+    position: absolute;
+
+    top: -40px;
+
+    width: 13px;
+    height: 18px;
+
+    background: rgba(190, 122, 135, .58);
+
+    border-radius: 100% 0 100% 0;
+
+    opacity: .7;
+
+    animation:
+        petalFall linear forwards,
+        petalRotate ease-in-out infinite;
+}
+
+.petal.sakura {
+
+    width: 11px;
+    height: 11px;
+
+    background: rgba(218, 151, 164, .58);
+
+    border-radius: 50% 50% 50% 0;
+
+    transform: rotate(45deg);
+}
+
+@keyframes petalFall {
+
+    0% {
+        transform:
+            translate3d(0, -40px, 0)
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            translate3d(var(--drift), 110vh, 0)
+            rotate(540deg);
+    }
+}
+
+@keyframes petalRotate {
+
+    0% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 20px;
+    }
+
+    100% {
+        margin-left: -15px;
+    }
+}
+
+
+/* ==================================================
+   ОБЩИЕ ЭЛЕМЕНТЫ
+================================================== */
+
+.section-label {
+
+    display: block;
+
+    color: var(--bronze);
+
+    font-size: clamp(10px, 1.8vw, 13px);
+
+    letter-spacing: .30em;
+
+    margin-bottom: 30px;
+
+    font-weight: 400;
+}
+
+.section-number {
+
+    color: var(--bronze);
+
+    font-family: var(--serif);
+
+    font-size: 26px;
+}
+
+.gold-line {
+
+    width: 48px;
+    height: 1px;
+
+    background: var(--bronze);
+
+    margin: 35px auto;
+}
+
+.gold-line.left {
+    margin-left: 0;
+}
+
+
+/* ==================================================
+   PHOTO 1
+================================================== */
+
+.portrait-section {
+
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        clamp(70px, 12vh, 130px)
+        20px
+        clamp(100px, 15vh, 160px);
+}
+
+.portrait-section > .section-number {
+
+    width: min(560px, 82vw);
+
+    margin:
+        0 auto
+        20px;
+}
+
+.portrait-frame {
+
+    width: min(560px, 82vw);
+
+    margin: 0 auto;
+
+    padding: 9px;
+
+    border: 1px solid var(--line);
+
+    background: rgba(250, 247, 240, .55);
+
+    box-shadow:
+        0 20px 55px rgba(58, 48, 35, .08);
+}
+
+.portrait-inner {
+
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.portrait-inner img {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter:
+        saturate(.92)
+        sepia(.04);
+}
+
+.portrait-info {
+
+    width: min(560px, 82vw);
+
+    margin: 22px auto 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+.portrait-info span {
+
+    color: var(--bronze);
+
+    font-size: 10px;
+
+    letter-spacing: .28em;
+}
+
+.portrait-info p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-family: var(--serif);
+
+    font-size: clamp(19px, 5vw, 24px);
+
+    line-height: 1;
+}
+
+
+/* ==================================================
+   INVITATION
+================================================== */
+
+.invitation {
+
+    width: 100%;
+
+    padding:
+        clamp(100px, 16vh, 175px)
+        22px;
+
+    background: var(--paper);
+
+    text-align: center;
+}
+
+.invitation-symbol {
+
+    color: var(--bronze);
+
+    font-family: var(--serif);
+
+    font-size: 23px;
+
+    margin-bottom: 25px;
+}
+
+.invitation-content {
+
+    width: min(650px, 100%);
+
+    margin: 0 auto;
+}
+
+.invitation h2 {
+
+    margin: 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(55px, 14vw, 92px);
+
+    font-weight: 400;
+
+    line-height: .82;
+}
+
+.invitation p {
+
+    width: min(570px, 100%);
+
+    margin:
+        0 auto
+        22px;
+
+    color: var(--muted);
+
+    font-family: var(--serif);
+
+    font-size: clamp(20px, 5vw, 24px);
+
+    line-height: 1.5;
+}
+
+.invitation strong {
+
+    color: var(--text);
+
+    font-weight: 500;
+}
+
+
+/* ==================================================
+   DATE
+================================================== */
+
+.date-section {
+
+    width: 100%;
+
+    padding:
+        clamp(100px, 16vh, 165px)
+        20px;
+
+    text-align: center;
+}
+
+.date-inner {
+
+    width: min(800px, 100%);
+
+    margin: 0 auto;
+}
+
+.date-display {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: clamp(12px, 4vw, 25px);
+
+    margin:
+        clamp(45px, 8vh, 70px)
+        0
+        clamp(45px, 8vh, 60px);
+}
+
+.date-day {
+
+    font-family: var(--serif);
+
+    font-size: clamp(110px, 28vw, 220px);
+
+    font-weight: 300;
+
+    line-height: .65;
+}
+
+.date-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+}
+
+.date-details span {
+
+    color: var(--bronze);
+
+    font-size: 11px;
+
+    letter-spacing: .28em;
+}
+
+.date-details strong {
+
+    font-family: var(--serif);
+
+    font-size: clamp(25px, 6vw, 32px);
+
+    font-weight: 400;
+}
+
+.date-inner > .gold-line {
+
+    margin: 0 auto 45px;
+}
+
+
+/* ==================================================
+   COUNTDOWN
+================================================== */
+
+.countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: clamp(15px, 7vw, 55px);
+}
+
+.countdown-item {
+
+    min-width: 45px;
+}
+
+.countdown-item strong {
+
+    display: block;
+
+    font-family: var(--serif);
+
+    font-size: clamp(25px, 7vw, 36px);
+
+    font-weight: 400;
+}
+
+.countdown-item span {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--bronze);
+
+    font-size: 9px;
+
+    letter-spacing: .18em;
+}
+
+
+/* ==================================================
+   PHOTO 2
+================================================== */
+
+.second-photo-section {
+
+    width: 100%;
+
+    padding:
+        90px
+        8vw
+        130px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 35%)
+        minmax(0, 48%);
+
+    justify-content: center;
+
+    align-items: end;
+
+    gap: 7%;
+}
+
+.second-photo-text {
+
+    min-width: 0;
+
+    padding-bottom: 35px;
+}
+
+.second-photo-text .section-number {
+
+    display: block;
+
+    margin-bottom: 50px;
+}
+
+.second-photo-text h2 {
+
+    margin: 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(42px, 6vw, 65px);
+
+    font-weight: 400;
+
+    line-height: .9;
+}
+
+.second-photo-text p {
+
+    max-width: 270px;
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-family: var(--serif);
+
+    font-size: clamp(19px, 4vw, 22px);
+
+    line-height: 1.4;
+}
+
+.second-photo-frame {
+
+    min-width: 0;
+
+    padding: 9px;
+
+    border: 1px solid var(--line);
+
+    background: var(--paper-light);
+}
+
+.second-photo-inner {
+
+    overflow: hidden;
+}
+
+.second-photo-inner img {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter:
+        saturate(.92)
+        sepia(.04);
+}
+
+
+/* ==================================================
+   LOCATION
+================================================== */
+
+.location {
+
+    width: 100%;
+
+    padding:
+        clamp(100px, 16vh, 175px)
+        20px;
+
+    background: var(--paper);
+
+    text-align: center;
+}
+
+.location-inner {
+
+    width: min(700px, 100%);
+
+    margin: 0 auto;
+}
+
+.location-symbol {
+
+    color: var(--bronze);
+
+    font-family: var(--serif);
+
+    font-size: 23px;
+
+    margin-bottom: 15px;
+}
+
+
+/* КРАСИВАЯ РАМКА АДРЕСА */
+
+.location-card {
+
+    padding:
+        clamp(35px, 7vw, 60px)
+        clamp(22px, 6vw, 55px);
+
+    border: 1px solid var(--line);
+
+    position: relative;
+
+    background:
+        rgba(250, 247, 240, .32);
+
+    box-shadow:
+        inset 0 0 0 7px rgba(154, 128, 88, .035);
+}
+
+.location-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 8px;
+
+    border: 1px solid rgba(154, 128, 88, .22);
+
+    pointer-events: none;
+}
+
+.location h2 {
+
+    margin: 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(48px, 13vw, 92px);
+
+    font-weight: 400;
+
+    letter-spacing: .03em;
+
+    line-height: .9;
+
+    position: relative;
+}
+
+.location-type {
+
+    margin: 12px 0 0;
+
+    color: var(--muted);
+
+    font-family: var(--serif);
+
+    font-size: clamp(20px, 5vw, 25px);
+
+    position: relative;
+}
+
+.address-box {
+
+    position: relative;
+
+    margin: 30px auto;
+
+    padding: 18px 20px;
+
+    border-top: 1px solid rgba(154,128,88,.25);
+
+    border-bottom: 1px solid rgba(154,128,88,.25);
+
+    width: min(400px, 100%);
+}
+
+.address-label {
+
+    display: block;
+
+    color: var(--bronze);
+
+    font-size: 10px;
+
+    letter-spacing: .25em;
+
+    margin-bottom: 10px;
+}
+
+.address {
+
+    margin: 0;
+
+    color: var(--text);
+
+    font-family: var(--serif);
+
+    font-size: clamp(21px, 5vw, 27px);
+
+    line-height: 1.35;
+}
+
+.event-time-box {
+
+    position: relative;
+
+    margin: 40px auto 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.event-time-box span {
+
+    color: var(--bronze);
+
+    font-size: 10px;
+
+    letter-spacing: .28em;
+}
+
+.event-time-box strong {
+
+    font-family: var(--serif);
+
+    font-size: clamp(52px, 13vw, 72px);
+
+    font-weight: 400;
+
+    line-height: .9;
+}
+
+#mapButton {
+
+    position: relative;
+
+    min-height: 48px;
+
+    padding: 14px 30px;
+
+    background: transparent;
+
+    border: 1px solid var(--bronze);
+
+    color: var(--text);
+
+    font-family: var(--sans);
+
+    font-size: 9px;
+
+    letter-spacing: .22em;
+
+    cursor: pointer;
+
+    transition:
+        background .35s ease,
+        color .35s ease;
+}
+
+#mapButton:hover {
+
+    background: var(--bronze);
+
+    color: white;
+}
+
+
+/* ==================================================
+   ТОЙДУН ЭЭЛЕРИ
+================================================== */
+
+.owners {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 80vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 100px 25px;
+
+    text-align: center;
+}
+
+.owners-border {
+
+    position: absolute;
+
+    top: 35px;
+    right: 25px;
+    bottom: 35px;
+    left: 25px;
+
+    border: 1px solid var(--line);
+
+    pointer-events: none;
+}
+
+.owners-content {
+
+    width: min(650px, 100%);
+
+    position: relative;
+}
+
+.owners-symbol {
+
+    color: var(--bronze);
+
+    font-family: var(--serif);
+
+    font-size: 23px;
+
+    margin-bottom: 25px;
+}
+
+.owners h2 {
+
+    margin: 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(55px, 14vw, 90px);
+
+    font-weight: 400;
+
+    line-height: .85;
+
+    letter-spacing: .03em;
+}
+
+.owners-and {
+
+    margin: 18px 0;
+
+    color: var(--bronze);
+
+    font-family: var(--serif);
+
+    font-size: clamp(22px, 5vw, 30px);
+
+    font-style: italic;
+}
+
+.owners p {
+
+    width: min(450px, 100%);
+
+    margin: 0 auto;
+
+    color: var(--muted);
+
+    font-family: var(--serif);
+
+    font-size: clamp(19px, 5vw, 23px);
+
+    line-height: 1.5;
+}
+
+
+/* ==================================================
+   FINAL
+================================================== */
+
+.final {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100svh;
+
+    min-height: 100dvh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        100px
+        25px
+        calc(100px + env(safe-area-inset-bottom));
+
+    text-align: center;
+}
+
+.final-border {
+
+    position: absolute;
+
+    top: max(20px, env(safe-area-inset-top));
+    right: max(20px, env(safe-area-inset-right));
+    bottom: max(20px, env(safe-area-inset-bottom));
+    left: max(20px, env(safe-area-inset-left));
+
+    border: 1px solid var(--line);
+
+    pointer-events: none;
+}
+
+.final-content {
+
+    width: min(700px, 100%);
+}
+
+.final-symbol {
+
+    color: var(--bronze);
+
+    font-family: var(--serif);
+
+    font-size: 23px;
+
+    margin-bottom: 25px;
+}
+
+.final h2 {
+
+    margin: 0;
+
+    font-family: var(--serif);
+
+    font-size: clamp(60px, 17vw, 115px);
+
+    font-weight: 400;
+
+    line-height: .8;
+}
+
+.final p {
+
+    width: min(430px, 100%);
+
+    margin: 0 auto;
+
+    color: var(--muted);
+
+    font-family: var(--serif);
+
+    font-size: clamp(19px, 5vw, 23px);
+
+    line-height: 1.5;
+}
+
+.final-name {
+
+    margin-top: 60px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(30px, 9vw, 42px);
+
+    letter-spacing: .12em;
+}
+
+.final-date {
+
+    margin-top: 10px;
+
+    color: var(--bronze);
+
+    font-size: 10px;
+
+    letter-spacing: .35em;
+}
+
+
+/* ==================================================
+   MUSIC BUTTON
+================================================== */
+
+.music-button {
+
+    position: fixed;
+
+    right: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom));
+
+    z-index: 1000;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--bronze);
+
+    background: rgba(246, 242, 233, .9);
+
+    color: var(--bronze);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(50,40,30,.08);
+
+    backdrop-filter: blur(5px);
+}
+
+.music-icon {
+
+    font-family: var(--serif);
+
+    font-size: 22px;
+
+    line-height: 1;
+}
+
+.music-button.playing {
+
+    animation: musicPulse 2s infinite ease-in-out;
+}
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .second-photo-section {
+
+        grid-template-columns:
+            minmax(0, 32%)
+            minmax(0, 55%);
+
+        gap: 5%;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .portrait-section {
+
+        padding-top: 70px;
+        padding-bottom: 100px;
+    }
+
+    .portrait-section > .section-number,
+    .portrait-frame,
+    .portrait-info {
+
+        width: min(84vw, 430px);
+    }
+
+    .portrait-info {
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+    }
+
+
+    .invitation {
+
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+
+    .date-section {
+
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+
+    .second-photo-section {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding:
+            80px
+            20px
+            110px;
+
+        gap: 35px;
+    }
+
+    .second-photo-text {
+
+        width: 100%;
+
+        padding: 0;
+    }
+
+    .second-photo-text .section-number {
+
+        margin-bottom: 25px;
+    }
+
+    .second-photo-frame {
+
+        width: min(76vw, 340px);
+
+        align-self: flex-end;
+    }
+
+
+    .location {
+
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .location-card {
+
+        padding:
+            40px 20px;
+    }
+
+
+    .owners {
+
+        min-height: 75vh;
+
+        padding:
+            100px 20px;
+    }
+
+    .owners-border {
+
+        left: 18px;
+        right: 18px;
+    }
+
+
+    .final {
+
+        padding-top: 80px;
+        padding-bottom: 100px;
+    }
+}
+
+
+/* ==================================================
+   iPhone SE / SMALL PHONES
+================================================== */
+
+@media (max-width: 380px) {
+
+    .portrait-section > .section-number,
+    .portrait-frame,
+    .portrait-info {
+
+        width: 88vw;
+    }
+
+    .portrait-frame {
+        padding: 7px;
+    }
+
+    .section-label {
+        font-size: 9px;
+    }
+
+    .invitation p,
+    .final p,
+    .owners p {
+
+        font-size: 18px;
+    }
+
+    .date-day {
+
+        font-size: 105px;
+    }
+
+    .countdown {
+
+        gap: 11px;
+    }
+
+    .countdown-item {
+
+        min-width: 35px;
+    }
+
+    .countdown-item strong {
+
+        font-size: 22px;
+    }
+
+    .countdown-item span {
+
+        font-size: 7px;
+    }
+
+    .second-photo-frame {
+
+        width: 78vw;
+    }
+
+    .location h2 {
+
+        font-size: 50px;
+    }
+
+    .address {
+
+        font-size: 20px;
+    }
+
+    .event-time-box strong {
+
+        font-size: 52px;
+    }
+
+    .owners h2 {
+
+        font-size: 55px;
+    }
+
+    .final h2 {
+
+        font-size: 59px;
+    }
+}
+
+
+/* ==================================================
+   ULTRA SMALL
+================================================== */
+
+@media (max-width: 340px) {
+
+    .date-day {
+
+        font-size: 92px;
+    }
+
+    .date-details span {
+
+        font-size: 7px;
+    }
+
+    .date-details strong {
+
+        font-size: 21px;
+    }
+
+    .countdown {
+
+        gap: 8px;
+    }
+
+    .countdown-item strong {
+
+        font-size: 20px;
+    }
+
+    .location h2 {
+
+        font-size: 44px;
+    }
+
+    .owners h2 {
+
+        font-size: 50px;
+    }
+
+    .final h2 {
+
+        font-size: 53px;
+    }
+}
+
+
+/* ==================================================
+   LANDSCAPE PHONE
+================================================== */
+
+@media
+    (max-width: 900px)
+    and (orientation: landscape) {
+
+    .portrait-section {
+
+        padding-top: 60px;
+    }
+
+    .second-photo-section {
+
+        padding-top: 70px;
+    }
+}
+
+
+/* ==================================================
+   IOS SAFE AREA
+================================================== */
+
+@supports (padding: max(0px)) {
+
+    .music-button {
+
+        bottom:
+            max(
+                20px,
+                calc(20px + env(safe-area-inset-bottom))
+            );
+    }
+
+    .final {
+
+        padding-bottom:
+            max(
+                100px,
+                calc(100px + env(safe-area-inset-bottom))
+            );
+    }
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .petal {
+        animation: none !important;
+        display: none;
+    }
+}
