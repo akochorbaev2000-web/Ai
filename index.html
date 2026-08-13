@@ -1,0 +1,3092 @@
+<!DOCTYPE html>
+<html lang="ky">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<meta
+    name="theme-color"
+    content="#101712"
+>
+
+<meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+>
+
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+>
+
+<title>Азамат & Айгерим</title>
+
+
+<!-- =====================================================
+     ШРИФТЫ
+====================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    background: #101712;
+    color: #eee7d8;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+
+/* =====================================================
+   ЗАЩИТА ОТ ГОРИЗОНТАЛЬНОГО СКРОЛЛА
+===================================================== */
+
+body,
+section,
+main,
+footer,
+div {
+    max-width: 100%;
+}
+
+
+/* =====================================================
+   АУДИО
+===================================================== */
+
+#weddingMusic {
+    display: none;
+}
+
+
+/* =====================================================
+   ПЕРВЫЙ ЭКРАН
+===================================================== */
+
+.opening {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100svh;
+    min-height: 100dvh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    perspective: 2200px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #243229 0%,
+            #17221b 48%,
+            #0b110d 100%
+        );
+
+    padding:
+        env(safe-area-inset-top)
+        env(safe-area-inset-right)
+        env(safe-area-inset-bottom)
+        env(safe-area-inset-left);
+}
+
+
+/* =====================================================
+   ВНУТРЕННЯЯ ЧАСТЬ
+===================================================== */
+
+.inside {
+
+    position: absolute;
+
+    width: min(900px, 88vw);
+
+    height: min(620px, 76svh);
+
+    min-height: 420px;
+
+    display: flex;
+
+    overflow: hidden;
+
+    background: #eee7d8;
+
+    color: #292d28;
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,.55);
+
+    border:
+        1px solid
+        rgba(168,139,81,.7);
+
+}
+
+
+/* левая часть */
+
+.inside-left {
+
+    width: 50%;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: clamp(18px, 4vw, 45px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f2ebdd,
+            #e5dac2
+        );
+}
+
+
+/* правая часть */
+
+.inside-right {
+
+    width: 50%;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: clamp(18px, 4vw, 45px);
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9dfca,
+            #ddd0b5
+        );
+}
+
+
+/* =====================================================
+   PHOTO 1
+===================================================== */
+
+.photo {
+
+    position: relative;
+
+    width: min(75%, 300px);
+
+    aspect-ratio: 3 / 4;
+
+    padding: 8px;
+
+    border:
+        1px solid
+        #a6894e;
+
+    background: #ddd2bc;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.20);
+
+    overflow: hidden;
+}
+
+
+.photo::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border:
+        1px solid
+        rgba(166,137,78,.65);
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+.photo img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+/* =====================================================
+   ГЕРБ ВНУТРИ
+===================================================== */
+
+.main-crest {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    width: 100%;
+
+    max-width: 280px;
+}
+
+
+.main-crown {
+
+    font-family:
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(25px, 4vw, 35px);
+
+    color: #a6894e;
+
+    margin-bottom: 5px;
+}
+
+
+.main-shield {
+
+    width: clamp(75px, 11vw, 105px);
+
+    height: clamp(90px, 13vw, 125px);
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        #a6894e;
+
+    background:
+        rgba(166,137,78,.06);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 68%,
+            50% 100%,
+            0 68%
+        );
+}
+
+
+.main-shield::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 6px;
+
+    border:
+        1px solid
+        rgba(166,137,78,.5);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 68%,
+            50% 100%,
+            0 68%
+        );
+}
+
+
+.main-monogram {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    color: #a6894e;
+
+    letter-spacing: -6px;
+
+    margin-right: 6px;
+}
+
+
+.main-crest-names {
+
+    margin-top: 14px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: clamp(15px, 2.5vw, 22px);
+
+    letter-spacing: 2px;
+
+    color: #80642f;
+}
+
+
+.main-crest-date {
+
+    margin-top: 7px;
+
+    font-size: clamp(6px, 1vw, 8px);
+
+    letter-spacing: 3px;
+
+    color: #80642f;
+}
+
+
+/* =====================================================
+   ОБЛОЖКА
+===================================================== */
+
+.cover {
+
+    position: absolute;
+
+    width: min(900px, 88vw);
+
+    height: min(620px, 76svh);
+
+    min-height: 420px;
+
+    display: flex;
+
+    z-index: 20;
+
+    transform-style: preserve-3d;
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+}
+
+
+/* =====================================================
+   ПОЛОВИНЫ ОБЛОЖКИ
+===================================================== */
+
+.cover-left,
+.cover-right {
+
+    position: relative;
+
+    width: 50%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #18231d,
+            #101914
+        );
+
+    border:
+        1px solid
+        rgba(185,153,87,.5);
+
+    overflow: hidden;
+
+    backface-visibility: hidden;
+
+    transition:
+        transform 1.7s
+        cubic-bezier(.77,0,.18,1);
+}
+
+
+.cover-left {
+
+    transform-origin: left center;
+
+    border-right: none;
+}
+
+
+.cover-right {
+
+    transform-origin: right center;
+
+    border-left: none;
+}
+
+
+/* =====================================================
+   РАМКИ
+===================================================== */
+
+.cover-left::before,
+.cover-right::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: clamp(12px, 2vw, 18px);
+
+    border:
+        1px solid
+        rgba(190,158,91,.55);
+}
+
+
+.cover-left::after,
+.cover-right::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: clamp(18px, 2.8vw, 25px);
+
+    border:
+        1px solid
+        rgba(190,158,91,.15);
+}
+
+
+/* =====================================================
+   ЦЕНТРАЛЬНЫЙ ГЕРБ
+===================================================== */
+
+.cover-crest {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 30;
+
+    width: min(190px, 40vw);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    transition:
+        opacity .6s ease,
+        transform .8s ease;
+
+    pointer-events: none;
+}
+
+
+.crown {
+
+    font-family:
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(25px, 5vw, 35px);
+
+    color: #b99a5b;
+
+    margin-bottom: 5px;
+}
+
+
+.cover-shield {
+
+    width: clamp(75px, 12vw, 105px);
+
+    height: clamp(90px, 14vw, 125px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    border:
+        1px solid
+        #b99a5b;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(185,154,89,.16),
+            rgba(185,154,89,.03)
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 68%,
+            50% 100%,
+            0 68%
+        );
+}
+
+
+.cover-shield::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 6px;
+
+    border:
+        1px solid
+        rgba(205,178,116,.55);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 68%,
+            50% 100%,
+            0 68%
+        );
+}
+
+
+.cover-monogram {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: clamp(32px, 6vw, 48px);
+
+    color: #d2b36e;
+
+    letter-spacing: -7px;
+
+    margin-right: 7px;
+}
+
+
+.cover-names {
+
+    margin-top: 13px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: clamp(14px, 2.5vw, 20px);
+
+    letter-spacing: 2px;
+
+    color: #d7c59e;
+
+    white-space: nowrap;
+}
+
+
+.cover-date {
+
+    margin-top: 6px;
+
+    font-size: clamp(6px, 1vw, 7px);
+
+    letter-spacing: 3px;
+
+    color: #a99261;
+}
+
+
+/* =====================================================
+   ПОДСКАЗКА
+===================================================== */
+
+.tap {
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 40;
+
+    font-size: clamp(6px, 1.5vw, 8px);
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(220,200,157,.75);
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    animation:
+        pulse 2s infinite;
+
+    transition:
+        opacity .5s;
+}
+
+
+/* =====================================================
+   ОТКРЫТИЕ
+===================================================== */
+
+body.opened .cover-left {
+
+    transform:
+        rotateY(-105deg);
+}
+
+
+body.opened .cover-right {
+
+    transform:
+        rotateY(105deg);
+}
+
+
+body.opened .cover-crest {
+
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.75);
+}
+
+
+body.opened .tap {
+
+    opacity: 0;
+}
+
+
+/* =====================================================
+   СКРЫВАЕМ САЙТ ДО ОТКРЫТИЯ
+===================================================== */
+
+.pages,
+.footer {
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease;
+}
+
+
+body.opened .pages,
+body.opened .footer {
+
+    visibility: visible;
+
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+
+/* =====================================================
+   ОБЩАЯ СТРАНИЦА
+===================================================== */
+
+.page {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100svh;
+    min-height: 100dvh;
+
+    padding:
+        120px
+        max(25px, 7vw)
+        90px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   РАМКА СТРАНИЦ
+===================================================== */
+
+.page::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 22px;
+
+    border:
+        1px solid
+        rgba(128,99,46,.35);
+
+    pointer-events: none;
+}
+
+
+.page::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 30px;
+
+    border:
+        1px solid
+        rgba(128,99,46,.12);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   ГЕРБ НА СТРАНИЦАХ
+===================================================== */
+
+.page-crest {
+
+    position: absolute;
+
+    top: 30px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+
+.page-crest-shield {
+
+    width: 45px;
+
+    height: 54px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(166,137,78,.8);
+
+    background:
+        rgba(166,137,78,.04);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 68%,
+            50% 100%,
+            0 68%
+        );
+}
+
+
+.page-crest-shield::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 4px;
+
+    border:
+        1px solid
+        rgba(166,137,78,.35);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 68%,
+            50% 100%,
+            0 68%
+        );
+}
+
+
+.page-monogram {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 20px;
+
+    color: #a6894e;
+
+    letter-spacing: -4px;
+
+    margin-right: 4px;
+}
+
+
+/* =====================================================
+   БЛОК 2 — СТИХ
+===================================================== */
+
+.poem-page {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f2ebdd,
+            #ded1b6
+        );
+}
+
+
+.poem-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(700px, 100%);
+
+    text-align: center;
+
+    padding:
+        20px;
+}
+
+
+.poem-text {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(24px, 4vw, 39px);
+
+    line-height: 1.35;
+
+    color: #394238;
+}
+
+
+.poem-line {
+
+    display: block;
+
+    margin-bottom: 4px;
+}
+
+
+.poem-ending {
+
+    margin-top: 28px;
+
+    font-size:
+        clamp(25px, 4vw, 42px);
+
+    color: #80642f;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   БЛОК 3 — ПРИГЛАШЕНИЕ
+===================================================== */
+
+.invitation-page {
+
+    background:
+        #eee7d8;
+
+    color: #30372f;
+}
+
+
+.invitation-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(700px, 100%);
+
+    text-align: center;
+
+    padding:
+        20px;
+}
+
+
+.invitation-text {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(20px, 3vw, 30px);
+
+    line-height: 1.5;
+
+    color: #57574f;
+}
+
+
+.invitation-names {
+
+    margin:
+        25px 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(34px, 6vw, 60px);
+
+    color: #80642f;
+
+    font-weight: 500;
+}
+
+
+/* =====================================================
+   БЛОК 7 — PHOTO 2
+===================================================== */
+
+.photo-page {
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee7d8,
+            #ded2b8
+        );
+}
+
+
+.photo-page-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(520px, 82vw);
+
+    height: min(700px, 78svh);
+
+    padding: 11px;
+
+    border:
+        1px solid
+        #a88b51;
+
+    transform:
+        rotate(1deg);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.2);
+
+    background: #eee7d8;
+}
+
+
+.photo-page-content::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
+
+    border:
+        1px solid
+        rgba(166,137,78,.55);
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+.photo-page-content img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   БЛОК 6 — МЕСТО
+===================================================== */
+
+.venue-page {
+
+    background:
+        #17231c;
+
+    color: #eee7d8;
+}
+
+
+.venue-page::before {
+
+    border-color:
+        rgba(185,153,87,.5);
+}
+
+
+.venue-page::after {
+
+    border-color:
+        rgba(185,153,87,.15);
+}
+
+
+.venue-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(700px, 100%);
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+.venue-label {
+
+    font-size:
+        clamp(7px, 1.5vw, 9px);
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: #bca06a;
+}
+
+
+.venue-title {
+
+    margin-top: 25px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(65px, 12vw, 110px);
+
+    font-weight: 300;
+
+    line-height: .85;
+
+    color: #eee7d8;
+}
+
+
+.venue-subtitle {
+
+    margin-top: 25px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(28px, 5vw, 40px);
+
+    color: #c5aa70;
+}
+
+
+.venue-address {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(9px, 1.8vw, 11px);
+
+    letter-spacing: 1.5px;
+
+    color:
+        rgba(238,231,216,.65);
+}
+
+
+.map-button {
+
+    display: inline-block;
+
+    margin-top: 32px;
+
+    padding:
+        14px 28px;
+
+    border:
+        1px solid
+        #a88b51;
+
+    color: #cbb37c;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.map-button:active,
+.map-button:hover {
+
+    background: #a88b51;
+
+    color: #17231c;
+}
+
+
+/* =====================================================
+   БЛОК 4 — КАЛЕНДАРЬ
+===================================================== */
+
+.calendar-page {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f1eadc,
+            #dfd2b8
+        );
+}
+
+
+.calendar-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(650px, 100%);
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+.calendar-label {
+
+    font-size:
+        clamp(7px, 1.5vw, 9px);
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: #80642f;
+}
+
+
+.calendar-title {
+
+    margin-top: 18px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(35px, 7vw, 65px);
+
+    color: #29352d;
+}
+
+
+.calendar {
+
+    width: min(430px, 100%);
+
+    margin:
+        35px auto 0;
+
+    padding:
+        clamp(18px, 4vw, 30px);
+
+    background:
+        rgba(255,255,255,.25);
+
+    border:
+        1px solid
+        rgba(128,99,46,.35);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.08);
+}
+
+
+.calendar-month {
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #80642f;
+}
+
+
+.calendar-year {
+
+    margin-top: 5px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 38px;
+
+    color: #29352d;
+}
+
+
+.calendar-week,
+.calendar-days {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 7px;
+}
+
+
+.calendar-week {
+
+    margin-top: 25px;
+
+    padding-bottom: 10px;
+
+    border-bottom:
+        1px solid
+        rgba(128,99,46,.2);
+}
+
+
+.calendar-week span {
+
+    font-size: 7px;
+
+    color: #80642f;
+
+    letter-spacing: 1px;
+}
+
+
+.calendar-days {
+
+    margin-top: 12px;
+}
+
+
+.calendar-days span {
+
+    min-width: 0;
+
+    aspect-ratio: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(15px, 3vw, 21px);
+
+    color: #4d5049;
+}
+
+
+.calendar-days .empty {
+
+    visibility: hidden;
+}
+
+
+.calendar-days .wedding-day {
+
+    position: relative;
+
+    background: #29382e;
+
+    color: #eee7d8;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 4px rgba(168,139,81,.15);
+}
+
+
+.calendar-note {
+
+    margin-top: 25px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(17px, 3vw, 24px);
+
+    color: #80642f;
+}
+
+
+/* =====================================================
+   БЛОК 5 — ТООЙДУН ЭЭЛЕРИ
+===================================================== */
+
+.hosts-page {
+
+    background:
+        #17231c;
+
+    color: #eee7d8;
+}
+
+
+.hosts-page::before {
+
+    border-color:
+        rgba(185,153,87,.5);
+}
+
+
+.hosts-page::after {
+
+    border-color:
+        rgba(185,153,87,.15);
+}
+
+
+.hosts-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(600px, 100%);
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+.hosts-label {
+
+    font-size:
+        clamp(7px, 1.5vw, 9px);
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: #bca06a;
+}
+
+
+.hosts-title {
+
+    margin-top: 20px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(48px, 9vw, 85px);
+
+    font-weight: 300;
+
+    color: #eee7d8;
+}
+
+
+.host-name {
+
+    margin-top: 38px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(38px, 7vw, 65px);
+
+    color: #c5aa70;
+
+    letter-spacing: 2px;
+}
+
+
+.host-line {
+
+    width: 60px;
+
+    height: 1px;
+
+    margin: 25px auto 15px;
+
+    background: #a88b51;
+}
+
+
+.host-and {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 25px;
+
+    color: #a88b51;
+}
+
+
+/* =====================================================
+   БЛОК 8 — ФИНАЛ
+===================================================== */
+
+.footer {
+
+    position: relative;
+
+    min-height: 35svh;
+
+    min-height: 35dvh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        70px 25px;
+
+    background:
+        #0e1511;
+
+    color: #eee7d8;
+}
+
+
+.footer-text {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(30px, 7vw, 50px);
+
+    color: #c5aa70;
+}
+
+
+.footer-small {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(6px, 1.5vw, 8px);
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(238,231,216,.45);
+}
+
+
+/* =====================================================
+   АНИМАЦИЯ
+===================================================== */
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: .35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   ПЛАНШЕТЫ
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .inside,
+    .cover {
+
+        width: 92vw;
+
+        height: min(570px, 78svh);
+
+        min-height: 430px;
+    }
+
+
+    .inside-left,
+    .inside-right {
+
+        padding: 15px;
+    }
+
+
+    .photo {
+
+        width: 88%;
+
+        aspect-ratio: 3 / 4;
+    }
+
+
+    .page {
+
+        padding:
+            105px 22px
+            75px;
+    }
+
+
+    .page::before {
+
+        inset: 18px;
+    }
+
+
+    .page::after {
+
+        inset: 25px;
+    }
+
+
+    .page-crest {
+
+        top: 22px;
+    }
+
+
+    .venue-title {
+
+        font-size: 75px;
+    }
+
+}
+
+
+/* =====================================================
+   ТЕЛЕФОНЫ
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .opening {
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+
+    .inside,
+    .cover {
+
+        width: 92vw;
+
+        height: min(570px, 78svh);
+
+        min-height: 390px;
+    }
+
+
+    .inside-left {
+
+        padding: 12px;
+    }
+
+
+    .inside-right {
+
+        padding: 10px;
+    }
+
+
+    .photo {
+
+        width: 90%;
+
+        padding: 6px;
+    }
+
+
+    .photo::after {
+
+        inset: 6px;
+    }
+
+
+    .main-crest-names {
+
+        letter-spacing: 1px;
+    }
+
+
+    .cover-names {
+
+        letter-spacing: 1px;
+    }
+
+
+    .tap {
+
+        bottom: 18px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .page {
+
+        min-height: 100svh;
+
+        padding:
+            100px 18px
+            65px;
+    }
+
+
+    .page::before {
+
+        inset: 14px;
+    }
+
+
+    .page::after {
+
+        inset: 20px;
+    }
+
+
+    .page-crest {
+
+        top: 17px;
+    }
+
+
+    .poem-content,
+    .invitation-content,
+    .venue-content,
+    .calendar-content,
+    .hosts-content {
+
+        padding:
+            10px;
+    }
+
+
+    .poem-text {
+
+        font-size: 25px;
+
+        line-height: 1.3;
+    }
+
+
+    .poem-ending {
+
+        margin-top: 22px;
+
+        font-size: 27px;
+    }
+
+
+    .invitation-text {
+
+        font-size: 21px;
+
+        line-height: 1.45;
+    }
+
+
+    .invitation-names {
+
+        font-size: 38px;
+
+        margin:
+            20px 0;
+    }
+
+
+    .photo-page-content {
+
+        width: 82vw;
+
+        height: 68svh;
+
+        min-height: 430px;
+
+        max-height: 620px;
+    }
+
+
+    .venue-title {
+
+        font-size: 65px;
+    }
+
+
+    .venue-subtitle {
+
+        font-size: 28px;
+    }
+
+
+    .venue-address {
+
+        font-size: 9px;
+
+        line-height: 1.6;
+    }
+
+
+    .calendar {
+
+        margin-top: 25px;
+
+        padding: 17px;
+    }
+
+
+    .calendar-week,
+    .calendar-days {
+
+        gap: 4px;
+    }
+
+
+    .calendar-week span {
+
+        font-size: 6px;
+    }
+
+
+    .calendar-days span {
+
+        font-size: 16px;
+    }
+
+
+    .hosts-title {
+
+        font-size: 52px;
+    }
+
+
+    .host-name {
+
+        font-size: 42px;
+
+        margin-top: 30px;
+    }
+
+}
+
+
+/* =====================================================
+   ОЧЕНЬ МАЛЕНЬКИЕ ТЕЛЕФОНЫ
+===================================================== */
+
+@media (max-width: 390px) {
+
+    .inside,
+    .cover {
+
+        width: 94vw;
+
+        height: 510px;
+
+        min-height: 360px;
+    }
+
+
+    .inside-left,
+    .inside-right {
+
+        padding: 8px;
+    }
+
+
+    .main-crown,
+    .crown {
+
+        font-size: 23px;
+    }
+
+
+    .main-shield,
+    .cover-shield {
+
+        width: 65px;
+
+        height: 80px;
+    }
+
+
+    .main-monogram,
+    .cover-monogram {
+
+        font-size: 28px;
+    }
+
+
+    .main-crest-names,
+    .cover-names {
+
+        font-size: 12px;
+    }
+
+
+    .main-crest-date,
+    .cover-date {
+
+        font-size: 5px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .tap {
+
+        font-size: 5px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .page {
+
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+
+    .poem-text {
+
+        font-size: 22px;
+    }
+
+
+    .poem-ending {
+
+        font-size: 24px;
+    }
+
+
+    .invitation-text {
+
+        font-size: 19px;
+    }
+
+
+    .invitation-names {
+
+        font-size: 34px;
+    }
+
+
+    .photo-page-content {
+
+        width: 84vw;
+
+        height: 62svh;
+
+        min-height: 380px;
+    }
+
+
+    .venue-title {
+
+        font-size: 57px;
+    }
+
+
+    .calendar {
+
+        padding: 12px;
+    }
+
+
+    .calendar-week,
+    .calendar-days {
+
+        gap: 3px;
+    }
+
+
+    .calendar-days span {
+
+        font-size: 14px;
+    }
+
+
+    .hosts-title {
+
+        font-size: 45px;
+    }
+
+
+    .host-name {
+
+        font-size: 36px;
+    }
+
+}
+
+
+/* =====================================================
+   ОЧЕНЬ УЗКИЕ ЭКРАНЫ
+===================================================== */
+
+@media (max-width: 340px) {
+
+    .inside,
+    .cover {
+
+        width: 95vw;
+
+        height: 470px;
+    }
+
+
+    .photo {
+
+        width: 92%;
+    }
+
+
+    .inside-right {
+
+        padding: 5px;
+    }
+
+
+    .main-crest-names,
+    .cover-names {
+
+        font-size: 10px;
+    }
+
+
+    .poem-text {
+
+        font-size: 20px;
+    }
+
+
+    .invitation-text {
+
+        font-size: 17px;
+    }
+
+
+    .invitation-names {
+
+        font-size: 30px;
+    }
+
+
+    .venue-title {
+
+        font-size: 50px;
+    }
+
+}
+
+
+/* =====================================================
+   ГОРИЗОНТАЛЬНЫЙ РЕЖИМ ТЕЛЕФОНА
+===================================================== */
+
+@media (max-height: 550px) and (orientation: landscape) {
+
+    .inside,
+    .cover {
+
+        height: 88svh;
+
+        min-height: 300px;
+
+        width: 82vw;
+    }
+
+
+    .page {
+
+        min-height: 100svh;
+
+        padding-top: 75px;
+
+        padding-bottom: 55px;
+    }
+
+
+    .page-crest {
+
+        top: 15px;
+    }
+
+
+    .photo-page-content {
+
+        height: 78svh;
+
+        width: auto;
+
+        aspect-ratio: 3 / 4;
+    }
+
+
+    .venue-title {
+
+        font-size: 55px;
+    }
+
+
+    .calendar {
+
+        margin-top: 15px;
+    }
+
+}
+
+
+/* =====================================================
+   iPHONE — SAFE AREA
+===================================================== */
+
+@supports (padding: max(0px)) {
+
+    .opening {
+
+        padding-top:
+            max(0px, env(safe-area-inset-top));
+
+        padding-bottom:
+            max(0px, env(safe-area-inset-bottom));
+    }
+
+
+    .page {
+
+        padding-left:
+            max(18px, env(safe-area-inset-left));
+
+        padding-right:
+            max(18px, env(safe-area-inset-right));
+    }
+
+
+    .footer {
+
+        padding-bottom:
+            max(70px, env(safe-area-inset-bottom));
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     МУЗЫКА
+===================================================== -->
+
+<audio
+    id="weddingMusic"
+    loop
+    preload="auto"
+>
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<!-- =====================================================
+     ПЕРВЫЙ ЭКРАН
+===================================================== -->
+
+<section class="opening">
+
+
+    <!-- =================================================
+         ВНУТРЕННЯЯ ЧАСТЬ
+    ================================================== -->
+
+    <div class="inside">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="inside-left">
+
+            <div class="photo">
+
+                <img
+                    src="photo1.jpg"
+                    alt="Азамат жана Айгерим"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- ГЕРБ -->
+
+        <div class="inside-right">
+
+            <div class="main-crest">
+
+                <div class="main-crown">
+                    ♛
+                </div>
+
+
+                <div class="main-shield">
+
+                    <div class="main-monogram">
+                        A A
+                    </div>
+
+                </div>
+
+
+                <div class="main-crest-names">
+                    Азамат & Айгерим
+                </div>
+
+
+                <div class="main-crest-date">
+                    XVI · X · MMXXVI
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ОБЛОЖКА
+    ================================================== -->
+
+    <div
+        class="cover"
+        id="cover"
+    >
+
+
+        <div class="cover-left"></div>
+
+        <div class="cover-right"></div>
+
+
+        <div class="cover-crest">
+
+            <div class="crown">
+                ♛
+            </div>
+
+
+            <div class="cover-shield">
+
+                <div class="cover-monogram">
+                    A A
+                </div>
+
+            </div>
+
+
+            <div class="cover-names">
+                Азамат & Айгерим
+            </div>
+
+
+            <div class="cover-date">
+                XVI · X · MMXXVI
+            </div>
+
+        </div>
+
+
+        <div class="tap">
+            Ачуу үчүн басыңыз
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ВСЕ СТРАНИЦЫ
+===================================================== -->
+
+<main class="pages">
+
+
+<!-- =====================================================
+     БЛОК 2 — СТИХ
+===================================================== -->
+
+<section class="page poem-page">
+
+
+    <div class="page-crest">
+
+        <div class="page-crest-shield">
+
+            <div class="page-monogram">
+                A A
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="poem-content">
+
+        <div class="poem-text">
+
+            <div class="poem-line">
+                Аруу тилек,
+            </div>
+
+            <div class="poem-line">
+                асыл максат жолубузда,
+            </div>
+
+            <div class="poem-line">
+                баш кошуп турмуш куруу оюбузда.
+            </div>
+
+
+            <br>
+
+
+            <div class="poem-line">
+                Өмүргө бирге аттанып,
+            </div>
+
+            <div class="poem-line">
+                кол кармашып,
+            </div>
+
+
+            <div class="poem-ending">
+                келиңиздер ак никелүү тоюбузга!!
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     БЛОК 3 — ПРИГЛАШЕНИЕ
+===================================================== -->
+
+<section class="page invitation-page">
+
+
+    <div class="page-crest">
+
+        <div class="page-crest-shield">
+
+            <div class="page-monogram">
+                A A
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="invitation-content">
+
+
+        <div class="invitation-text">
+
+            Урматтуу биздин сыйлуу конокторубуз!
+
+            <br><br>
+
+            Жүрөгүбүздө чоң кубаныч сезими менен,
+            сиздерди балдарыбыз
+
+        </div>
+
+
+        <div class="invitation-names">
+            Азамат & Айгеримдин
+        </div>
+
+
+        <div class="invitation-text">
+
+            үлпөт тоюбузга арналган салтанатыбызга
+            келип, ак дасторкон үстүндө даам сызып,
+            баталарыңызды берип, кадырлуу коногубуз
+            болуп кетүүгө чакырабыз!!
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     БЛОК 7 — PHOTO 2
+===================================================== -->
+
+<section class="page photo-page">
+
+
+    <div class="page-crest">
+
+        <div class="page-crest-shield">
+
+            <div class="page-monogram">
+                A A
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="photo-page-content">
+
+        <img
+            src="photo2.jpg"
+            alt="Азамат жана Айгерим"
+        >
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     БЛОК 6 — МЕСТО
+===================================================== -->
+
+<section class="page venue-page">
+
+
+    <div class="page-crest">
+
+        <div class="page-crest-shield">
+
+            <div class="page-monogram">
+                A A
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="venue-content">
+
+
+        <div class="venue-label">
+            Той өтүүчү жер
+        </div>
+
+
+        <div class="venue-title">
+            Анталия
+        </div>
+
+
+        <div class="venue-subtitle">
+            Ресторан
+        </div>
+
+
+        <div class="venue-address">
+            Ленин көчөсү, 123Б үй
+        </div>
+
+
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=улица+Ленина+123Б"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-button"
+        >
+            Картаны ачуу
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     БЛОК 4 — КАЛЕНДАРЬ
+===================================================== -->
+
+<section class="page calendar-page">
+
+
+    <div class="page-crest">
+
+        <div class="page-crest-shield">
+
+            <div class="page-monogram">
+                A A
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="calendar-content">
+
+
+        <div class="calendar-label">
+            Бул күндү белгилеп коюңуз
+        </div>
+
+
+        <div class="calendar-title">
+            Биздин өзгөчө күн
+        </div>
+
+
+        <div class="calendar">
+
+
+            <div class="calendar-month">
+                ОКТЯБРЬ
+            </div>
+
+
+            <div class="calendar-year">
+                2026
+            </div>
+
+
+            <div class="calendar-week">
+
+                <span>ДШ</span>
+                <span>ШШ</span>
+                <span>ШР</span>
+                <span>БШ</span>
+                <span>ЖМ</span>
+                <span>ИШ</span>
+                <span>ЖК</span>
+
+            </div>
+
+
+            <div class="calendar-days">
+
+                <span class="empty"></span>
+                <span class="empty"></span>
+                <span class="empty"></span>
+
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+
+                <span>5</span>
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>10</span>
+                <span>11</span>
+
+                <span>12</span>
+                <span>13</span>
+                <span>14</span>
+                <span>15</span>
+
+                <span class="wedding-day">
+                    16
+                </span>
+
+                <span>17</span>
+                <span>18</span>
+
+                <span>19</span>
+                <span>20</span>
+                <span>21</span>
+                <span>22</span>
+                <span>23</span>
+                <span>24</span>
+                <span>25</span>
+
+                <span>26</span>
+                <span>27</span>
+                <span>28</span>
+                <span>29</span>
+                <span>30</span>
+                <span>31</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="calendar-note">
+
+            Жума · 16-октябрь, 2026-жыл
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     БЛОК 5 — ТООЙДУН ЭЭЛЕРИ
+===================================================== -->
+
+<section class="page hosts-page">
+
+
+    <div class="page-crest">
+
+        <div class="page-crest-shield">
+
+            <div class="page-monogram">
+                A A
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="hosts-content">
+
+
+        <div class="hosts-label">
+            Тойдун ээлери
+        </div>
+
+
+        <div class="hosts-title">
+            Тойдун ээлери
+        </div>
+
+
+        <div class="host-name">
+            М а р л е н
+        </div>
+
+
+        <div class="host-line"></div>
+
+
+        <div class="host-and">
+            жана
+        </div>
+
+
+        <div class="host-name">
+            Н а з г ү л
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     БЛОК 8 — ФИНАЛ
+===================================================== -->
+
+<footer class="footer">
+
+
+    <div>
+
+        <div class="footer-text">
+            Азамат & Айгерим
+        </div>
+
+
+        <div class="footer-small">
+            XVI · X · MMXXVI
+        </div>
+
+    </div>
+
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   ПЕРЕМЕННЫЕ
+===================================================== */
+
+const cover =
+    document.getElementById("cover");
+
+const weddingMusic =
+    document.getElementById("weddingMusic");
+
+let opened = false;
+
+
+/* =====================================================
+   ОТКРЫТИЕ ПРИГЛАШЕНИЯ
+===================================================== */
+
+function openInvitation() {
+
+    if (opened) {
+        return;
+    }
+
+    opened = true;
+
+    document.body.classList.add("opened");
+
+
+    /* =================================================
+       МУЗЫКА
+    ================================================= */
+
+    if (weddingMusic) {
+
+        weddingMusic.volume = 0.45;
+
+        const playPromise =
+            weddingMusic.play();
+
+        if (playPromise !== undefined) {
+
+            playPromise.catch(function(error) {
+
+                console.log(
+                    "Автозапуск музыки заблокирован браузером.",
+                    error
+                );
+
+            });
+
+        }
+
+    }
+
+
+    /* =================================================
+       ПОСЛЕ АНИМАЦИИ ПРОКРУЧИВАЕМ К ПЕРВОЙ СТРАНИЦЕ
+    ================================================= */
+
+    setTimeout(function() {
+
+        const firstPage =
+            document.querySelector(".poem-page");
+
+        if (firstPage) {
+
+            firstPage.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    }, 1900);
+
+}
+
+
+/* =====================================================
+   КЛИК
+===================================================== */
+
+if (cover) {
+
+    cover.addEventListener(
+        "click",
+        openInvitation
+    );
+
+}
+
+
+/* =====================================================
+   TOUCH ДЛЯ IPHONE
+===================================================== */
+
+if (cover) {
+
+    cover.addEventListener(
+        "touchend",
+        function(event) {
+
+            event.preventDefault();
+
+            openInvitation();
+
+        },
+        {
+            passive: false
+        }
+    );
+
+}
+
+
+/* =====================================================
+   ОБРАТНЫЙ ОТСЧЁТ
+   Оставлен универсальный, если позже добавим блок
+===================================================== */
+
+const weddingDate =
+    new Date(
+        "October 16, 2026 00:00:00"
+    ).getTime();
+
+
+function updateCountdown() {
+
+    const daysElement =
+        document.getElementById("days");
+
+    const hoursElement =
+        document.getElementById("hours");
+
+    const minutesElement =
+        document.getElementById("minutes");
+
+    const secondsElement =
+        document.getElementById("seconds");
+
+
+    /*
+       Если блока обратного отсчёта пока нет,
+       просто ничего не делаем.
+    */
+
+    if (
+        !daysElement ||
+        !hoursElement ||
+        !minutesElement ||
+        !secondsElement
+    ) {
+
+        return;
+
+    }
+
+
+    const now =
+        new Date().getTime();
+
+
+    const difference =
+        weddingDate - now;
+
+
+    if (difference <= 0) {
+
+        daysElement.textContent = "00";
+        hoursElement.textContent = "00";
+        minutesElement.textContent = "00";
+        secondsElement.textContent = "00";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (
+                difference %
+                (1000 * 60 * 60 * 24)
+            ) /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (
+                difference %
+                (1000 * 60 * 60)
+            ) /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (
+                difference %
+                (1000 * 60)
+            ) /
+            1000
+        );
+
+
+    daysElement.textContent =
+        String(days).padStart(2, "0");
+
+
+    hoursElement.textContent =
+        String(hours).padStart(2, "0");
+
+
+    minutesElement.textContent =
+        String(minutes).padStart(2, "0");
+
+
+    secondsElement.textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+
+updateCountdown();
+
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =====================================================
+   НЕ ДАЁМ БРАУЗЕРУ ВОССТАНОВИТЬ СТАРУЮ ПОЗИЦИЮ
+===================================================== */
+
+if ("scrollRestoration" in history) {
+
+    history.scrollRestoration = "manual";
+
+}
+
+
+window.addEventListener(
+    "load",
+    function() {
+
+        window.scrollTo(
+            0,
+            0
+        );
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>
