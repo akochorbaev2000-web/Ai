@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>Кыз узатуу — Айгерим</title>
+
+    <meta name="theme-color" content="#f6f2e9">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ==================================================
+     МУЗЫКА
+================================================== -->
+
+<audio
+    id="weddingMusic"
+    loop
+    preload="auto"
+    playsinline
+>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- ==================================================
+     ЛЕПЕСТКИ
+================================================== -->
+
+<div
+    class="petals-container"
+    id="petalsContainer"
+    aria-hidden="true"
+></div>
+
+
+<!-- ==================================================
+     01 — БАШКЫ БЕТ
+================================================== -->
+
+<section class="portrait-section">
+
+    <div class="portrait-frame">
+
+        <div class="portrait-inner">
+
+            <img
+                src="images/photo1.jpg"
+                alt="Айгерим"
+            >
+
+        </div>
+
+    </div>
+
+    <div class="portrait-info">
+
+        <span>АЙГЕРИМ</span>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     02 — ЧАКЫРУУ
+================================================== -->
+
+<section class="invitation">
+
+    <div class="invitation-symbol">
+        ❈
+    </div>
+
+    <div class="invitation-content">
+
+        <span class="section-label">
+            ЧАКЫРУУ
+        </span>
+
+        <h2>
+            Урматтуу<br>
+            жакындарыбыз
+        </h2>
+
+        <div class="gold-line"></div>
+
+        <p>
+            Сиздерди кызыбыз
+            <strong>Айгеримдин</strong>
+            кыз узатуусуна арналган
+            ак дасторконубуздун
+            сыйлуу коногу болууга
+            чакырабыз.
+        </p>
+
+        <p>
+            Бул өзгөчө күнү биздин
+            кубанычыбызды тең бөлүшүп,
+            ак баталарыңызды
+            берсеңиздер,
+            биз үчүн чоң сыймык.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     03 — ДАТА
+================================================== -->
+
+<section class="date-section">
+
+    <div class="date-inner">
+
+        <div class="wedding-title">
+            КЫЗ УЗАТУУ
+        </div>
+
+        <div class="wedding-title-line"></div>
+
+        <div class="date-display">
+
+            <div class="date-day">
+                10
+            </div>
+
+            <div class="date-details">
+
+                <span>
+                    ОКТЯБРЬ
+                </span>
+
+                <strong>
+                    2026
+                </strong>
+
+            </div>
+
+        </div>
+
+        <div class="gold-line"></div>
+
+        <div class="countdown">
+
+            <div class="countdown-item">
+                <strong id="days">00</strong>
+                <span>КҮН</span>
+            </div>
+
+            <div class="countdown-item">
+                <strong id="hours">00</strong>
+                <span>СААТ</span>
+            </div>
+
+            <div class="countdown-item">
+                <strong id="minutes">00</strong>
+                <span>МҮНӨТ</span>
+            </div>
+
+            <div class="countdown-item">
+                <strong id="seconds">00</strong>
+                <span>СЕКУНД</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     04 — ФОТО 2
+================================================== -->
+
+<section class="second-photo-section">
+
+    <div class="second-photo-frame">
+
+        <div class="second-photo-inner">
+
+            <img
+                src="images/photo2.jpg"
+                alt="Айгерим"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     05 — ТОЙ ӨТҮҮЧҮ ЖЕР
+================================================== -->
+
+<section class="location">
+
+    <div class="location-inner">
+
+        <span class="section-label">
+            ТОЙ ӨТҮҮЧҮ ЖЕР
+        </span>
+
+        <div class="location-symbol">
+            ❈
+        </div>
+
+        <div class="location-card">
+
+            <h2>
+                ГРИГОРЬЕВКА
+            </h2>
+
+            <p class="location-type">
+                айылы
+            </p>
+
+            <div class="gold-line"></div>
+
+            <div class="address-box">
+
+                <span class="address-label">
+                    ДАРЕГИБИЗ
+                </span>
+
+                <p class="address">
+                    Ленин көчөсү<br>
+                    33-үй
+                </p>
+
+            </div>
+
+            <div class="event-time-box">
+
+                <span>
+                    БАШТАЛЫШЫ
+                </span>
+
+                <strong>
+                    12:00
+                </strong>
+
+            </div>
+
+            <button
+                id="mapButton"
+                type="button"
+            >
+                КАРТАДАН КӨРҮҮ
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     06 — ТОЙДУН ЭЭЛЕРИ
+================================================== -->
+
+<section class="owners">
+
+    <div class="owners-border"></div>
+
+    <div class="owners-content">
+
+        <span class="section-label">
+            ТОЙДУН ЭЭЛЕРИ
+        </span>
+
+        <div class="owners-symbol">
+            ❈
+        </div>
+
+        <h2>
+            Бактыбек
+        </h2>
+
+        <div class="owners-and">
+            жана
+        </div>
+
+        <h2>
+            Бактүгүл
+        </h2>
+
+        <div class="gold-line"></div>
+
+        <p>
+            Сиздерди ак дасторконубуздун
+            төрүнөн көрүүгө кубанычтабыз.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     07 — ФИНАЛ
+================================================== -->
+
+<section class="final">
+
+    <div class="final-border"></div>
+
+    <div class="final-content">
+
+        <span class="section-label">
+            КЫЗ УЗАТУУ
+        </span>
+
+        <div class="final-symbol">
+            ❈
+        </div>
+
+        <h2>
+            Урматтуу<br>
+            жакындарыбыз!
+        </h2>
+
+        <div class="gold-line"></div>
+
+        <p class="final-invitation">
+            Сиздерди кызыбыз
+            <strong>Айгеримдин</strong>
+            кыз узатуусуна арналган
+            ак дасторконубуздун
+            сыйлуу коногу болууга
+            чакырабыз.
+        </p>
+
+        <div class="final-details">
+
+            <div class="final-detail">
+
+                <span>
+                    ТОЙ ӨТҮҮЧҮ КҮН
+                </span>
+
+                <strong>
+                    10 октябрь 2026 жыл
+                </strong>
+
+                <small>
+                    10 · 10 · 2026
+                </small>
+
+            </div>
+
+
+            <div class="final-detail">
+
+                <span>
+                    БАШТАЛЫШЫ
+                </span>
+
+                <strong class="final-time">
+                    12:00
+                </strong>
+
+            </div>
+
+
+            <div class="final-detail">
+
+                <span>
+                    ДАРЕГИБИЗ
+                </span>
+
+                <strong>
+                    Григорьевка айылы
+                </strong>
+
+                <small>
+                    Ленин көчөсү 33
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="gold-line"></div>
+
+        <div class="final-waiting">
+            Сиздерди күтөбүз
+        </div>
+
+        <div class="final-name">
+            
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     КНОПКА МУЗЫКИ
+================================================== -->
+
+<button
+    class="music-button"
+    id="musicButton"
+    type="button"
+    aria-label="Музыканы күйгүзүү"
+>
+    <span class="music-icon">♪</span>
+</button>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
